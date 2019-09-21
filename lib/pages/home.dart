@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'animatedlist.dart';
-import 'animatedicon.dart';
-import 'animatedopacity.dart';
-import 'animatedpadding.dart';
-import 'animatedpositioned.dart';
-import 'stack.dart';
-import 'indexstack.dart';
-import 'limitedbox.dart';
-import 'constrainedbox.dart';
-import 'spacer.dart';
-import 'aspectRatio.dart';
-import 'richetext.dart';
-import 'draggable.dart';
-import 'mediaquery.dart';
-import 'placeholder.dart';
-import 'reorderablelistview.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'AnimatedContainer.dart';
+import 'wrap.dart';
+import 'floatingactionbutton.dart';
+import 'expanded.dart';
+import 'fadeinimage.dart';
+import 'fadetransition.dart';
+import 'opacity.dart';
+import 'pageview.dart';
+import 'login.dart';
+import 'page_de_ contenu.dart';
+
 class Homes extends StatefulWidget {
   @override
   createState() => HomesState();
@@ -23,59 +17,55 @@ class Homes extends StatefulWidget {
 
 class HomesState extends State<Homes> {
   List <Widget> arrWid = [
-    Animations(),
-    BodyWidget(),
-    LogoFade(),
-    Pad(),
-    Posit(),
-    Aspects(),
-    Constrains(),
-    MyHomePage(),
-    IndexdeSatck(),
-    Limied(),
-    Medias(),
-    Places(),
-    Reorder(),
-    Richs(),
-    Spacerss(),
-    Stackes(),
+    AnimatedContainers(),
+    Expandeds(),
+    FadeImages(),
+    FadeTransitions(),
+    Floatingbuttons(),
+    Wraps(),
+    Opacitys(),
+    PageViews(),
+    LoginApp(),
+    Contenus(),
+
   ];
 
   List <String> arrText = [
-      "AnimatedIcon",
-      "AnimatedList",
-      "AnimatedOpacity",
-      "AnimatedPadding",
-      "AnimatedPositioned",
-      "AspectRatio",
-      "ConstrainedBox",
-      "Draggable",
-      "IndexStack",
-      "LimitedBox",
-      "MediaQuery",
-      "PlaceHolder",
-      "ReorderableListView",
-      "RichText",
-      "Spacer",
-      "Stack"
+      "AnimatedContainer",
+      "Expanded",
+      "FadeImage",
+      "FadeTransition",
+      "FloatingButton",
+      "Wrap",
+      "Opacity",
+      "PageView",
+      "Login",
+      "Mon Contenu"
   ];
 
   @override
   Widget build(BuildContext context) {
     return 
        Scaffold(
+         appBar: AppBar(
+           backgroundColor: Colors.amber,
+           title: Text("ANGELIC SMART WORK", textAlign: TextAlign.center,),
+           actions: <Widget>[
+             Icon(Icons.work, color: Colors.white, size: 30,textDirection: TextDirection.ltr,)
+           ],
+         ),
          backgroundColor: Colors.white60,
          body: Container(
            child: ListView.builder(
              itemCount: arrText.length,
              itemBuilder: (context, i){
                return Container(
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(20),
                  child: 
                      RaisedButton(
                        
                         elevation: 10,
-                        color: Colors.pinkAccent,
+                        color: Colors.lightGreen,
                         onPressed: (){
                           toNewPage(arrWid[i]);
                         },
